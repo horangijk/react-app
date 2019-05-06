@@ -6,13 +6,23 @@ import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 import manageTottenham from './reducers/manageTottenham'
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import SignupForm from './components/SignupForm';
+import LoginForm from './components/LoginForm';
+
 
 const store = createStore(manageTottenham)
 
 ReactDOM.render(
+    <div>
     <Provider store={store}>
         <App />
-    </Provider>, 
+    </Provider> 
+    <Router>
+        <Route path="/signup" render={SignupForm} />,
+        <Route path="/login" render={LoginForm} />
+    </Router>
+    </div>,
     document.getElementById('root')
 );
 

@@ -1,29 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
+
+import React, { Component } from 'react';
 import './App.css';
-import Form from './components/Form'
+import {Navbar} from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { LinkContainer } from 'react-router-bootstrap';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-
-      <Form />
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+ render() {
+   return (
+     <div className='App container'>
+          <Navbar fluid collapseOnSelect> 
+          <Navbar className="header">
+            {/* <Navbar.Brand> */}
+              {/* <Link to='/'>Scratch</Link> */}
+            {/* </Navbar.Brand> */}
+            {/* <Navbar.Toggle /> */}
+          </Navbar> 
+          {/* <Navbar.Collapse> */}
+            {/* <Nav pullRight>  */}
+              {/* <LinkContainer to='/signup'>
+                <NavItem>Signup</NavItem>
+              </LinkContainer>
+              <LinkContainer to='/login'>
+                <NavItem>Login</NavItem>
+              </LinkContainer> */}
+            {/* </Nav> */}
+        {/* </Navbar.Collapse>   */}
+        </Navbar>
+         
+     </div>
+   );
+ }
 }
+
 
 export default App;
