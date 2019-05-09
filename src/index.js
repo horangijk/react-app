@@ -17,11 +17,7 @@ ReactDOM.render(
     <div>
     <Provider store={store}>
         <App />
-    </Provider> 
-    <Router>
-        <Route path="/signup" render={SignupForm} />,
-        <Route path="/login" render={LoginForm} />
-    </Router>
+    </Provider>
     </div>,
     document.getElementById('root')
 );
