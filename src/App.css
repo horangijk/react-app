@@ -1,17 +1,27 @@
 .App {
-  text-align: left;
+  text-align: left
+  
 }
 
 body {
-  background-image: url("https://images.pexels.com/photos/209861/pexels-photo-209861.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
-}
-
-.NavBar {
-  background-color: white;
+  background-image: url("https://ntproductioneastus.blob.core.windows.net/chrome-lp-images/tottenham-fc-middle-image.png");
 }
 
 .header {
   text-align: center;
+}
+
+.Form {
+  color: white;
+}
+
+.comment{
+  background-color: green;
+}
+
+.image {
+  height: 200px;
+  width: 200px;
 }
 
 .App-link {

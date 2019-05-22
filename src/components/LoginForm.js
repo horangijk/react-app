@@ -1,39 +1,33 @@
 import React, {Component} from 'react';
+
 class LoginForm extends Component {
-    state = {
-        input: '',
-        email: '',
-        password: ''
-    }
-
-    handleChange = e => {
-        this.setState({
-            input: e.target.value 
-        })
-    }   
-
+    
     handleSubmit = e => { 
         e.preventDefault();
-
+        
     }
 
     render() {
         return(
+            <div className='Form'>
+            <h1>Login</h1>
             <form>
                 <input 
                     type='email' 
                     name='email' 
                     placeholder='Email'
-                    onChange={this.handleChange.handleSubmit}>
+                    onChange={this.handleSubmit}>
                 </input>
+                <br/>
                 <input
                     type='text'
                     name='password'
                     placeholder='password'
-                    onChange={this.handleChange.handleSubmit}>
-                </input>
+                    onChange={this.handleSubmit}>
+                </input><br/>
                 <input type='submit'></input>
             </form>
+            </div>
         );
     }
 }

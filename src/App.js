@@ -1,56 +1,47 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import { LinkContainer } from 'react-router-bootstrap';
 import { Nav, NavItem, NavLink } from 'reactstrap';
-import { BrowserRouter as Router, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Home from './components/Home';
 import SignupForm from './components/SignupForm';
 import LoginForm from './components/LoginForm';
+import CommentForm from './components/CommentForm';
+import { Reducers } from './reducers/Reducers'
 
-// class App extends Component {
-//  render() {
-//    return (
-//      <div className='App container'>
-//            <Navbar fluid collapseOnSelect> 
-//             <Navbar className="header">
-//             <Router>
-//               <Route>
-//                 <NavLink to='/home' component={Home}>Home</NavLink><br/>
-//                 <NavLink to='/login' component={LoginForm}>Login</NavLink><br/>
-//                 <NavLink to='/signup' component={SignupForm}>Signup</NavLink>
-//               </Route>
-//             </Router>
-//             </Navbar> 
-            
-//           </Navbar>
-//      </div>
-//    );
-//  }
-//}
-          
-class App extends React.Component {
+class App extends Component {
+
   render() {
     return (
+      <div>
       <div className='NavBar'>
         <Nav>
-          <NavItem>
-            <NavLink href="/home" component={Home}>Home</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink href="/login" component={LoginForm}>Login</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink href="/signup" component={SignupForm}>Signup</NavLink>
-          </NavItem>
+            <NavItem>
+              <NavLink href="/home">Home</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/login">Login</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/signup">Signup</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/comment_form">Comment</NavLink>
+            </NavItem>
         </Nav>
-        
-        
+        <Router>
+          <Switch>
+            <Route path='/home' exact component={Home}></Route>
+            <Route path='/login' component={LoginForm}></Route>
+            <Route path='/signup' component={SignupForm}></Route>
+            <Route path='/comment_form' component={CommentForm}></Route>
+          </Switch>
+        </Router>
+      </div>
+      
       </div>
     );
   }
 }
-
-
 
 export default App;

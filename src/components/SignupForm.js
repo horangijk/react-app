@@ -1,22 +1,7 @@
 import React, { Component } from 'react'
 
 class SignupForm extends Component {
-    constructor() {
-        super()
-      }
-    state = {
-        input: "",
-        email: "",
-        password: "",
-        
-    }
     
-    handleChange = (e) => {
-        this.setState({
-            input: e.target.value    
-        })
-    }
-
     handleSubmit = e => { 
         e.preventDefault();   
         const email = document.forms['Form']['email'].value;
@@ -54,11 +39,21 @@ class SignupForm extends Component {
     //     );
     // }
     render() {
-        return (<form
+        return (
+        <div className='Form'>
+        <h1>Signup</h1>
+        <form
             name="Form"
             onSubmit={this.handleSubmit}
             noValidate
         >
+            <input
+                type='user'
+                name='user'
+                placeholder='User'
+                required 
+            />
+            <br/>
             <input
                 type="email"
                 name="email"
@@ -75,7 +70,8 @@ class SignupForm extends Component {
             <br />
             <input type="submit" />
             
-        </form>)
+        </form>
+        </div>)
     }
 }
 
